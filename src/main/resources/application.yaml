@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/bookdb
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/bookdb}
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
@@ -12,13 +12,13 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   data:
     redis:
-      host: localhost
+      host: ${SPRING_REDIS_HOST:localhost}
       port: 6379
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yaml
 
 jwt:
-  secret: 6971a414c5ef56c2ed7ef478144fea7be265d3f7bd833c1db1ef7836dac1336eaf3578acc0285009d370d0db5165e77a34ee5c0a3d33372bdb8e6a96668a19c34d03e6e101d6625af63a8096c9326a0aef8434c73d996c8b8ca0927c7a03a1e83cdd474ed53bd92d79d4f30690448e35747a10aea93d8efc4454c59a51a144a2f3156172f3df197a8a9224331b309e6c54a1e0e382f9ab59def4228a60a1d2eacc0f48b875eb6d756f276177815476573580a2aff25871b9d1aa7047c1d4f1c44e90d6a3e608aeb129d6111d1b3be0c75bd9e575549fc822dd6d1f00fb0d96b3bfc635f6a7345370bce6c26927400d3891398e70b581d134ec5983f05625aace
+  secret: ${JWT_SECRET_KEY:6971a414c5ef56c2ed7ef478144fea7be265d3f7bd833c1db1ef7836dac1336eaf3578acc0285009d370d0db5165e77a34ee5c0a3d33372bdb8e6a96668a19c34d03e6e101d6625af63a8096c9326a0aef8434c73d996c8b8ca0927c7a03a1e83cdd474ed53bd92d79d4f30690448e35747a10aea93d8efc4454c59a51a144a2f3156172f3df197a8a9224331b309e6c54a1e0e382f9ab59def4228a60a1d2eacc0f48b875eb6d756f276177815476573580a2aff25871b9d1aa7047c1d4f1c44e90d6a3e608aeb129d6111d1b3be0c75bd9e575549fc822dd6d1f00fb0d96b3bfc635f6a7345370bce6c26927400d3891398e70b581d134ec5983f05625aace}
   expiration: 86400000
 
 cache:
