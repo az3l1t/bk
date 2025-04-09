@@ -12,6 +12,8 @@ Swagger UI для тестирования API
 
 Thymeleaf-страница по адресу /books
 
+Модульные тесты
+
 ⚙️ Настройка
 1. application.yaml
    Перед запуском обязательно настройте файл application.yaml:
